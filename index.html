@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body style="background-image:url('images/bg.png');">
+	<div id="mainDiv" style="background-color:rgba(255,255,255,0.8);">
+		<div id="content" >
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* Today is my girl Sophie ’s birthday,</span><br />
+				<span class="space"/><span class="comments">* so I write some code to celebrate it </span><br />
+					<span class="space"/><span class="comments">*and mark some words from my heart to you.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Cillivian"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Sophie"</span>);<br />
+				<span class="comments">// Feb 3, 2018, We got to know each other in the crowd. </span><br />
+				i.pick(u);<br />
+				<span class="comments">// Luckily, I fell in love with you.</span><br />
+				i.love(u);<br />
+				<span class="comments">// Since then, I have miss u every day.</span><br />
+				i.miss(u);<br />
+				<span class="comments">// And taken care of u and our love.</span><br />
+				i.takeCareOf(u);<br />
+				<span class="comments">// Apr 30, we met and dated first time. Your beautiful smile </span><br />
+				<span class="comments">// and charmming eyes make my heart undulate muchly.</span><br />
+				i.meet(u);<br />
+				<span class="comments">// We watched a movie, climbed mountains and laughed all day.</span><br />
+				<span class="comments">//I have promised I would treat you like an apple of my eyes.</span><br />
+				<span class="keyword">int</span> restOfLife = <span class="keyword">100</span>;<br />
+				<span class="keyword">while</span> (restOfLife) {<br />
+				<span class="placeholder"/>i.beside(u);<br />
+				<span class="placeholder"/>i.getTogether(u);<br />
+				<span class="placeholder"/><span class="comments">// I will always be beside you.</span><br />
+				<span class="placeholder"/><span class="comments">// No matter what, I love you.</span><br />
+				<span class="placeholder"/>restOfLife-=1;<br />
+					<span class="comments">// Until I die.</span><br />
+				}<br />
+				i.liveHappilyWith(u);<br />
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* I have to say thanks to my sweetie for your company with me </span><br />
+					<span class="space"/><span class="comments">*and happy brithday to you.</span><br />
+						<span class="space"/><span class="comments">*I have to tell you a truth, you are 20 hhhhh😀.</span><br />
+						<span class="space"/><span class="comments">*But if you are willing to, </span><br />
+						<span class="space"/><span class="comments">*I would be beside with you on your every birthday. </span><br />
+				<span class="space"/><span class="comments">**/</span>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Sophie, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Cillivian</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 2, 3);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
